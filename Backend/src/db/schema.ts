@@ -20,7 +20,7 @@ export type CheckoutSessionLine = {
 export const users = pgTable("users", {
   id: uuid("id").defaultRandom().primaryKey(),
   clerkUserId: text("clerk_user_id").notNull().unique(),
-  email: text("clerk_user_id").notNull().default(""),
+  email: text("email").notNull().default(""),
   displayName: text("display_name"),
   role: text("role").$type<UserRole>().notNull().default("customer"),
   createdAt: timestamp("created_at", { withTimezone: true })
