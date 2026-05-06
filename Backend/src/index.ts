@@ -1,12 +1,12 @@
-import "dotenv/config"
-import express, { application } from 'express'
-import cors from "cors"
+import cors from "cors";
+import "dotenv/config";
+import express from 'express';
 
+import { clerkMiddleware } from "@clerk/express";
 import fs from "node:fs";
 import path from "node:path";
-import { clerkMiddleware } from "@clerk/express";
-import { clerkWebhookHandler } from './webhooks/clerk';
 import { getEnv } from './lib/env';
+import { clerkWebhookHandler } from './webhooks/clerk';
 
 const env = getEnv()
 const app = express();
